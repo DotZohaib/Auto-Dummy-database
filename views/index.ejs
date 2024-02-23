@@ -51,7 +51,7 @@
     <script>
       document.querySelector(".container>button").addEventListener("click", async ()=>{
         console.log("Yes")
-        let a = await fetch("/generate")
+        let a = await fetch("/click")
         let r = await a.json()
         console.log(r)
 
