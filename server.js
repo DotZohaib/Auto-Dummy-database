@@ -9,8 +9,8 @@ const port = 3000
 app.set('view engine', 'ejs');
 
 const getRandom = (arr)=>{
-    let rno = Math.floor(Math.random() * (arr.length - 1))
-    return arr[rno]
+    let rno = Math.floor(Math.random() * (ar.length - 1))
+    return ar[rno]
 }
 
 
@@ -18,18 +18,15 @@ app.get('/', (req, res) => {
     res.render('index', { foo: 'FOO' });
 })
 
-app.get('/generate', async (req, res) => {
-    // Clear the collection Employee
-    await Employee.deleteMany({}) 
-    // Generate random data
+app.get('/click', async (req, res) => {
 
     let randomNames = ['Zohaib', "Iqra", "Zoya", "Suhana"]
     let randomLang = ["Python", "js", "C++", "Java"]
     let randomCities = ["Larkana", "Fateh Jang", "larkana", "Karachi"]
-    for (let index = 0; index < 10; index++) {
+    for (let i = 0; i < 4; i++) {
         let e = await Employee.create({
             name: getRandom(randomNames),
-            salary: Math.floor(Math.random() * 22000),
+            salary: Math.floor(Math.random() * 19000),
             language: getRandom(randomLang),
             city: getRandom(randomCities)
         })
